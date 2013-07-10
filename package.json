@@ -1,0 +1,11 @@
+{
+	"name": "AgilePlatform",
+	"version": "0.0.0",
+	"description": "mockup",
+	"dependencies": {
+		"socket.io": "latest",
+		"express": "latest",
+		"jade": "latest"
+	},
+	"author": "badass"
+}
