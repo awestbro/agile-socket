@@ -12,3 +12,5 @@ Seperate the socket IO logic out of the index.js file.
 Find a way to save dashboard state. Possibly routing it to Mongoose. on update, delete, etc. 
 
 Use Angular binding to pull in and take care of new data
+
+Implement Socket.io rooms eventually.
