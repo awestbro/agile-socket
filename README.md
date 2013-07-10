@@ -5,6 +5,8 @@ Initial Proof of Concept for Agile planning.
 
 ## Installation
 
+Assumes you have `npm` installed
+
 Pull this down, then run:
 
 ```
