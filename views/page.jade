@@ -2,14 +2,33 @@
 html
 	head
 		title= "Real time web chat"
-		script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js')
+		link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css')
+		link(rel='stylesheet', href='/style/main.css')
+		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+		script(src='/bootstrap/js/bootstrap.min.js')
 		script(src='/chat.js')
 		script(src='/socket.io/socket.io.js')
 	body
-		#content(style='width: 500px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;')
-		.controls
-			| Name: 
-			input#name(style='width:350px;')
-			br
-			input#field(style='width:350px;')
-			input#send(type='button', value='send')
+		#wrap
+			#main.container.clear-top
+				div.navbar.navbar-fixed-top
+					div.navbar-inner
+						div.container
+							a(data-toggle='collapse',data-target='.nav-collapse').btn.btn-navbar
+								span.icon-bar
+							a(href='#').brand #{title}
+							div.nav-collapse
+								ul.nav
+									li.active
+										a(href='#') Agile Planning
+				br
+				br
+				br
+				br
+				.content
+		
+		footer.footer
+			.controls
+				input#field(style='width:350px;')
+				input#send(type='button', value='send')
