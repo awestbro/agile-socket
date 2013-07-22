@@ -7,8 +7,15 @@ html
 		link(rel='stylesheet', href='/style/main.css')
 		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
 		script(src='/bootstrap/js/bootstrap.min.js')
+		script(src='/js/handlebars.js')
 		script(src='/chat.js')
 		script(src='/socket.io/socket.io.js')
+		script#taskTemplate(type='text/x-handlebars-template')
+			<div class="task-container">
+			<div class="task-id">{{id}}</div>
+			<div class="task-message">{{message}}</div>
+			</div>
+
 	body
 		#wrap
 			#main.container.clear-top

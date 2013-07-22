@@ -6,9 +6,13 @@ window.onload = function() {
 	var sendButton = document.getElementById("send");
 	var $content = $('.content');
 
+	var source   = $("#taskTemplate").html();
+	var template = Handlebars.compile(source)
+
 	socket.on('message', function (data) {
-		if(data.message) {
-			$content.append('<div class="message">'+data.message+'</div>');	
+		if(data) {
+			console.log(data);
+			$content.append(template(data));	
 		} else {
 			console.log("There is a problem:", data);
 		}
@@ -16,7 +20,9 @@ window.onload = function() {
 
 	sendButton.onclick = sendMessage = function() {
 		var text = field.value;
-		socket.emit('send', { message: text, username: name.value });
+		var task = text.match(/(\[.*\])(.*)/);
+		console.log(task);
+		socket.emit('send', { id: task[1], message: task[2]});
 		field.value = "";
 	};
 }
